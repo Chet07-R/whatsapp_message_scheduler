@@ -1,0 +1,10 @@
+images/
+contacts.xlsx
+AutomationProfile/
+
+__pycache__/
+*.py[cod]
+.vscode/
+.idea/
+*.env
+*.log
