@@ -1,52 +1,29 @@
-# WhatsApp Bulk Messaging Automation with Selenium
+3. WhatsApp Web will open; the script will search for each contact, type the message, and send.
+4. Monitor the console for progress and instructions.
 
-## Overview
-This project automates sending personalized WhatsApp messages with images to multiple contacts or groups using Python and Selenium.  
-It reads contact details, messages, and image paths from an Excel file and uses a persistent WhatsApp Web login session to send bulk customized greetings efficiently.
+---
 
-## Features
-- Bulk send WhatsApp messages with custom text and images.
-- Uses an Excel file for contact management.
-- Handles WhatsApp Web's lazy loading by searching contacts.
-- Maintains session with Chrome user profile to avoid repeated QR scans.
-- Includes delays and waits for reliable operation.
+## Code Structure
 
-## Setup Instructions
+The script will:
+- Open WhatsApp Web and wait for you to authenticate (first time).
+- Read the contacts and messages from your Excel file.
+- For each contact:
+   - Search via WhatsApp Web's search bar.
+   - Open the chat and send the specified message.
+- Print progress for each message sent.
 
-### Prerequisites
-- Python 3.x installed.
-- Google Chrome installed.
-- ChromeDriver matching your Chrome installed and in PATH.
-- Install dependencies:  
+Comments are included to help you tweak waits, debug lazy loading, and adapt for future enhancements.
 
-
-### WhatsApp Profile Setup
-Log into WhatsApp Web manually once using any Chrome profile directory, then set that path in the script's Chrome options to persist the session.
-
-### Excel File Format (`contacts.xlsx`)
-| Name          | Message                         | ImagePath                          |
-|---------------|---------------------------------|-----------------------------------|
-| Di            | Happy Diwali! 🪔✨              | C:/Users/LENOVO/Desktop/images/di1.jpg |
-| John          | Hello John, wishing you success!| C:/Users/LENOVO/Desktop/images/john1.jpg |
-| Family Group  | Happy Diwali to my family 🎆    | C:/Users/LENOVO/Desktop/images/family.jpg |
-
-- **Name:** Exact WhatsApp contact/group name.
-- **Message:** Text message to send.
-- **ImagePath:** Absolute local path to the image file.
-
-## Usage
-
-1. Populate your `contacts.xlsx` file with names, messages, and image paths.
-2. Run the Python automation script:
-
-3. The script will open WhatsApp Web, search each contact, attach images, type messages, and send them.
-4. Follow console prompts if any, e.g., to close when done.
+---
 
 ## Notes
-- Image files must be local; URLs are not supported.
-- Use delays to prevent WhatsApp rate limiting.
-- Protect your Excel and image files by adding them to `.gitignore`.
-- Errors are logged; you can extend by adding try-except blocks for robustness.
+- No images or files are sent; this version is **text-only** by design.
+- Protect sensitive data: add `contacts.xlsx` and Chrome profile folders to your `.gitignore`.
+- Adjust delays (`time.sleep()`) for your internet speed if needed.
+- For troubleshooting, consult inline comments and console output.
+
+---
 
 ## References
 - [Selenium Python Documentation](https://selenium-python.readthedocs.io/)
@@ -55,4 +32,4 @@ Log into WhatsApp Web manually once using any Chrome profile directory, then set
 
 ---
 
-This project serves as a solid foundation for custom WhatsApp automation with scalable personalization options. Extend or modify as needed for your use case!
+This project is ideal for automating simple WhatsApp outreach, alerts, and event-based reminders for groups or individuals. Extend as needed!
